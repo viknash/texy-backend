@@ -1,19 +1,21 @@
-var utils = require('utils');
+var utils = require('utils'),
+    path = require('path'),
+    getModulePaths = require(path.resolve(path.join(__dirname + '../../../lib/utils/', 'getModulePaths')))
 
 module.exports = {
-  tests: {
-    tasks: ['mochaTest:ci'],
-    files: ['lib/**/*.js', 'modules/**/*.js']
-  },
-  schema: {
-    tasks: ['jsonlint', 'db'],
-    files: [
+    tests: {
+        tasks: ['mochaTest:ci'],
+        files: ['lib/**/*.js', 'modules/**/*.js']
+    },
+    schema: {
+        tasks: ['jsonlint', 'db'],
+        files: [
       'schema/seedData.json',
-      utils.getModulePaths('schema', 'seedData.json')
+      getModulePaths('schema', 'seedData.json')
     ]
-  },
-  docs: {
-    tasks: ['jsdoc:docs'],
-    files: ['./*.js', './lib/**/*.js'].concat(utils.getModulePaths('**', '*.js'))
-  }
+    },
+    docs: {
+        tasks: ['jsdoc:docs'],
+        files: ['./*.js', './lib/**/*.js'].concat(getModulePaths('**', '*.js'))
+    }
 };

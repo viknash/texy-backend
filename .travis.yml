@@ -14,7 +14,7 @@ script:
 
 notifications:
   email:
-    - cleverstack@github.com
+    - viknash@github.com
   irc:
     - "chat.freenode.net#cleverstack"
 

@@ -1,14 +1,16 @@
-var utils = require('utils');
+var utils = require('utils'),
+    path = require('path'),
+    getModulePaths = require(path.resolve(path.join(__dirname + '../../../lib/utils/', 'getModulePaths')))
 
 module.exports = {
-  options: {
-    jshintrc: '.jshintrc',
-    reporter: require('jshint-stylish'),
-    ignores: [
+    options: {
+        jshintrc: '.jshintrc',
+        reporter: require('jshint-stylish'),
+        ignores: [
       './modules/**/test*/**/*.js'
     ]
-  },
-  all: [
+    },
+    all: [
     './Gruntfile.js',
     './app.js',
     './cluster.js',
@@ -16,6 +18,6 @@ module.exports = {
     './modules/**/*.js',
     './tasks/**/*.js',
     './schema/**/*.js',
-    utils.getModulePaths('*.js')
+    getModulePaths('*.js')
   ]
 };
