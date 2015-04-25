@@ -11,7 +11,7 @@ CleverStack Node Seed
 CleverStack Node Seed provides you with a cutting edge NodeJS development workflow. It's been designed to provide you with a super fast test driven back-end development lifecycle. Everything you need should be just one command away, if it's not please open an issue or fork and submit a pull request.
 </blockquote>
 
-## Some Highlights
+## Some Highlights 
 * NodeJS Async Non-Blocking Core.
 * Modular Coding Structure based on NPM.
 * Grunt powered tasks, including Server with Live Restart using nodemon.
