@@ -55,7 +55,8 @@
         "stack-filter": "^1.0.0",
         "uberclass": "~1.0.1",
         "underscore": "~1.8.1",
-        "validator": "~3.x"
+        "validator": "~3.x",
+        "mysql": "^2.6.2"
     },
     "devDependencies": {
         "chai": "~1.9.1",
@@ -79,7 +80,7 @@
         "should": "~4.0.4",
         "sinon": "~1.10.2",
         "supertest": "~0.13.0",
-        "time-grunt": "~1.0.0"
+        "require-dir": "^0.3.0"
     },
     "keywords": [
     "cleverstack",

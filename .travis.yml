@@ -2,6 +2,7 @@ before_install:
   - npm install -g grunt-cli
   - npm install -g bower
   - npm install -g cleverstack-cli
+  - npm install -g mysql
 
 before_script:
   - mysql -e 'create database test_db;'
