@@ -6,6 +6,7 @@ before_install:
 
 before_script:
   - mysql -e 'create database test_db;'
+  - mysql -e 'create database nodeseed;'  
   - export NODE_ENV=test
   - export NODE_PATH=./lib/:./modules/
   - node tests/before_travis_test.js
