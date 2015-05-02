@@ -9,5 +9,6 @@ test-results.xml
 .*.swp
 local.json
 node_modules
+modules
 
 .sublime-grunt.cache
