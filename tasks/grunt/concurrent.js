@@ -20,7 +20,7 @@ module.exports = {
         grunt.registerTask('server:web', ['server']);
         grunt.registerTask('serve:debug', ['server:debug']);
         grunt.registerTask('serve', ['server:web']);
-        if (process.env.NODE_ENV.toUpperCase() !== 'TEST') {
+        if (process.env.NODE_ENV == undefined || process.env.NODE_ENV.toUpperCase() !== 'TEST') {
             grunt.registerTask('default', ['serve']);
         } else {
             grunt.registerTask('default', ['concurrent:dummy']);
