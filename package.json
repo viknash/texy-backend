@@ -80,7 +80,8 @@
         "should": "~4.0.4",
         "sinon": "~1.10.2",
         "supertest": "~0.13.0",
-        "require-dir": "^0.3.0"
+        "require-dir": "^0.3.0",
+        "grunt-mkdir": "^0.1.2"
     },
     "keywords": [
     "cleverstack",

@@ -1,5 +1,13 @@
 module.exports = {
     config: {
+        mkdir: {
+            all: {
+                options: {
+                    create: ['./modules']
+                }
+            }
+        },
+
         servers: {
             tasks: ['watch:schema', 'nodemon:cluster'],
             options: {
@@ -21,9 +29,9 @@ module.exports = {
         grunt.registerTask('serve:debug', ['server:debug']);
         grunt.registerTask('serve', ['server:web']);
         if (process.env.NODE_ENV == undefined || process.env.NODE_ENV.toUpperCase() !== 'TEST') {
-            grunt.registerTask('default', ['serve']);
+            grunt.registerTask('default', ['serve', 'concurrent:mkdir']);
         } else {
-            grunt.registerTask('default', ['concurrent:dummy']);
+            grunt.registerTask('default', ['concurrent:dummy', 'concurrent:mkdir']);
         }
     }
 };

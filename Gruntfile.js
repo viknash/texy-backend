@@ -2,14 +2,8 @@ var path = require('path'),
     fs = require('fs'),
     packageJson = require(__dirname + '/package.json'),
     merge = require('deepmerge'),
-    config = require(path.join(__dirname, 'config')),
-    utils = require(path.join(__dirname, 'lib', 'utils')),
-    helpers = utils.helpers,
     registerFuncs = [],
     gruntConfig = {};
-
-// Clean and set the NODE_PATH for magic modules
-process.env.NODE_PATH = helpers.nodePath();
 
 /**
  * Helper function to load grunt task configuration objects and register tasks
@@ -46,8 +40,19 @@ function loadGruntConfigs(taskNames, skipTasks) {
 }
 
 module.exports = function (grunt) {
+    //Create modules directory if it does not exist
+    grunt.file.mkdir(__dirname + "/modules/");
+
     // load all grunt tasks
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+
+    var utils = require(path.join(__dirname, 'lib', 'utils'));
+    var helpers = utils.helpers;
+    var config = require(path.join(__dirname, 'config'));
+
+    // Clean and set the NODE_PATH for magic modules
+    process.env.NODE_PATH = helpers.nodePath();
+
 
     // Load the grunt task config files
     loadGruntConfigs(helpers.getFilesForFolder(path.resolve(path.join(__dirname, 'tasks', 'grunt'))));
